@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "table-png"
-version = "0.1.0"
+version = "0.1.1"
 description = "Render a table (Markdown, CSV or JSON) as a PNG image with correct Korean, Chinese and Japanese text and colour emoji, for chat apps, notifications and bots that cannot show a Markdown table."
 readme = "README.md"
 requires-python = ">=3.9"

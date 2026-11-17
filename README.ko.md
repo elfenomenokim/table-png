@@ -157,7 +157,7 @@ print(result["png"], result["height"])
 | Linux | Noto Sans CJK(배포판별 경로 여러 개), NanumGothic, UnDotum, 그다음 `fc-match sans-serif:lang=ko` | Noto Color Emoji, 그다음 `fc-match emoji` |
 | Windows | 맑은 고딕, 유고딕, Microsoft YaHei, MS Gothic, SimSun | Segoe UI Emoji |
 
-macOS와 Ubuntu 24.04에서 시험했습니다. Windows 폰트 경로는 표준 경로지만 아직 시험하지 않았습니다. 써 보시고 알려 주시면 반영하겠습니다.
+macOS, Ubuntu 24.04, Windows 11에서 시험했습니다. Windows에서도 Segoe UI Emoji로 컬러 이모지가 나옵니다. 다만 Windows에는 국기 이모지가 없어 🇰🇷이 KR 글자로 보이고, 👨‍👩‍👧 같은 가족 조합은 얼굴이 따로따로 나옵니다.
 
 한글 폰트를 하나도 찾지 못하면 빈 네모를 그리는 대신, `--font`와 `TABLE_PNG_FONT`를 알려 주는 오류로 끝납니다.
 

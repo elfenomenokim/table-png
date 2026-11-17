@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .inputs import Table, read_source, read_table  # noqa: E402
 from .render import RenderOptions, render_table  # noqa: E402

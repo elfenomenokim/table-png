@@ -157,7 +157,7 @@ The first font that loads wins. Override it with `--font` or `TABLE_PNG_FONT`.
 | Linux | Noto Sans CJK (several distro paths), NanumGothic, UnDotum, then `fc-match sans-serif:lang=ko` | Noto Color Emoji, then `fc-match emoji` |
 | Windows | Malgun Gothic, Yu Gothic, Microsoft YaHei, MS Gothic, SimSun | Segoe UI Emoji |
 
-Tested on macOS and Ubuntu 24.04. The Windows font paths are standard but not yet tested; reports welcome.
+Tested on macOS, Ubuntu 24.04 and Windows 11. On Windows, Segoe UI Emoji draws in colour, but Windows has no flag emoji (🇰🇷 shows as the letters KR) and family sequences such as 👨‍👩‍👧 come out as separate faces.
 
 If no CJK font can be found, the command fails with a message that names `--font` and `TABLE_PNG_FONT` instead of drawing empty boxes.
 
