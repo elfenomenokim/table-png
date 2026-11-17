@@ -2,6 +2,15 @@
 
 Instructions for an AI agent asked to put a table somewhere that cannot show a Markdown table.
 
+## Repository work
+
+- Python package: `src/table_png/`; CLI: `src/table_png/cli.py`; renderer: `src/table_png/render.py`.
+- Run from this directory with `python -m table_png --help` or install the checkout with `python -m pip install -e .`.
+- The only runtime dependency is Pillow. Keep parsing, font choice and drawing in their current modules.
+- No test or lint command is configured in this repository. Do not claim additional platform coverage from a local macOS run.
+- Preserve explicit font selection and the current failure message when a CJK font cannot be found.
+- Demo inputs belong under `docs/demo/`; use made-up service rows and do not put user tables in committed examples.
+
 ## When to use it
 
 Use it when the destination renders Markdown as plain text or drops tables: a chat message, a phone notification, a bot reply, an image-only field, a slide, a PDF, a social post, an issue comment that strips tables.
