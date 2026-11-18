@@ -1,0 +1,9 @@
+{
+  "headers": ["Service", "State", "Response"],
+  "rows": [
+    ["API", "✅ ready", "120 ms"],
+    ["Queue", "⚠️ delayed", "3.2 s"],
+    ["Mailer", "❌ stopped", "—"]
+  ],
+  "align": ["l", "l", "r"]
+}

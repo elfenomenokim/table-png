@@ -1,0 +1,5 @@
+flowchart LR
+    Input[Markdown, CSV or JSON] --> Parse[Read table rows]
+    Parse --> Layout[Wrap cells and paginate]
+    Layout --> Draw[Draw with Pillow and local fonts]
+    Draw --> PNG[PNG image]

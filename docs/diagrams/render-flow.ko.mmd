@@ -1,0 +1,5 @@
+flowchart LR
+    Input[Markdown, CSV 또는 JSON] --> Parse[표 행 읽기]
+    Parse --> Layout[셀 줄바꿈과 페이지 나누기]
+    Layout --> Draw[Pillow와 로컬 글꼴로 그리기]
+    Draw --> PNG[PNG 이미지]
