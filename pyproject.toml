@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "table-png"
+version = "0.1.2"
+description = "A command-line tool that renders Markdown, CSV or JSON tables as PNG images for places that do not display tables."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "El Fenomeno" }]
+keywords = [
+  "table",
+  "png",
+  "image",
+  "markdown",
+  "csv",
+  "cjk",
+  "korean",
+  "emoji",
+  "chat",
+  "cli",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = ["Pillow>=9.2"]
+
+[project.urls]
+Homepage = "https://github.com/elfenomenokim/table-png"
+Repository = "https://github.com/elfenomenokim/table-png"
+Issues = "https://github.com/elfenomenokim/table-png/issues"
+
+[project.scripts]
+table-png = "table_png.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

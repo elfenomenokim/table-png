@@ -1,0 +1,11 @@
+{
+  "name": "table-png",
+  "sentence": "A command-line tool that renders Markdown, CSV or JSON tables as PNG images for places that do not display tables.",
+  "tag": "PYTHON · PILLOW",
+  "terminal": [
+    "$ table-png status.md --out status.png",
+    "/private/tmp/status.png",
+    "1080 × 343 PNG"
+  ],
+  "flow": ["Markdown · CSV · JSON", "Read table rows", "Rendered PNG"]
+}
