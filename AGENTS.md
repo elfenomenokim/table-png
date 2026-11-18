@@ -52,3 +52,16 @@ $ table-png table.md --out table.png --theme dark --title "제목"
 - Do not treat the rendered image as a data source later; keep the original table.
 
 - If columns cannot fit their text at the chosen width, increase `--width` or reduce the columns.
+
+## Code Review Rules
+
+A change is a real defect when it:
+
+- renders a table with CJK text or a colour emoji in a font that cannot draw it, or loses the explicit font failure message.
+- drops rows or clips cells instead of paginating at `--rows-per-page`.
+- lets the output width leave the documented 720–1600 px clamp.
+- stops the `--json` result from being `{"ok":true,...}` with `png` and `height` as arrays for paginated output, or changes the exit code 1 plus `{"error":...}` failure shape.
+- misdetects the input format, so a JSON, Markdown pipe table or CSV input is parsed into the wrong table.
+- adds a runtime dependency beyond Pillow, or breaks Python 3.9.
+
+Not defects: wording, formatting, comment style, requested extra tests, or a renamed helper.
