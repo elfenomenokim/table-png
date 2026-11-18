@@ -50,3 +50,5 @@ $ table-png table.md --out table.png --theme dark --title "제목"
 - Do not invent fonts or set `--font` to a font you have not checked exists. If the run fails with "no CJK-capable font found", install one or pass a real path.
 - Do not use the tool for tables over a few hundred rows; pagination produces many files. Summarize first.
 - Do not treat the rendered image as a data source later; keep the original table.
+
+- If columns cannot fit their text at the chosen width, increase `--width` or reduce the columns.

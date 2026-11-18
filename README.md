@@ -72,3 +72,5 @@ Pillow and a suitable local font are required. This project has been exercised o
 ## License
 
 MIT.
+
+Tables with too many columns for the selected width are rejected; increase `--width` or reduce the columns.

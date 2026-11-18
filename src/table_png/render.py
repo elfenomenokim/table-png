@@ -480,6 +480,14 @@ def _render_page(
     )
     regular_line = _line_height(measure, regular, geometry.line_gap)
     bold_line = _line_height(measure, bold, geometry.line_gap)
+    for index, cell_width in enumerate(col_widths):
+        samples = [(table.headers[index], bold, bold_line)] + [
+            (row[index], regular, regular_line) for row in table.rows
+        ]
+        if any(_text_width(measure, cluster, font, line_height) > cell_width - 2 * geometry.pad_x
+               for text, font, line_height in samples
+               for cluster in _graphemeish_clusters(text) if not cluster.isspace()):
+            raise ValueError("table has too many columns for this width; increase --width")
     header_lines = [
         _wrap_text(
             measure,
@@ -510,24 +518,20 @@ def _render_page(
     ]
     title_height = 0
     title_line = 0
+    title_lines = []
     if title:
         title_line = _line_height(measure, title_font, geometry.line_gap)
-        title_height = title_line + round(geometry.font_size * 0.6)
+        title_lines = _wrap_text(measure, title, title_font, width - 2 * geometry.margin, title_line)
+        title_height = len(title_lines) * title_line + round(geometry.font_size * 0.6)
     height = 2 * geometry.margin + title_height + header_height + sum(row_heights)
 
     image = Image.new("RGB", (width, height), theme.background)
     draw = ImageDraw.Draw(image)
     y = geometry.margin
     if title:
-        _draw_text(
-            image,
-            draw,
-            (geometry.margin, y),
-            title,
-            title_font,
-            theme.header_text,
-            title_line,
-        )
+        for index, line in enumerate(title_lines):
+            _draw_text(image, draw, (geometry.margin, y + index * title_line), line,
+                       title_font, theme.header_text, title_line)
         y += title_height
 
     def draw_row(

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "table-png"
-version = "0.1.2"
+version = "0.1.3"
 description = "A command-line tool that renders Markdown, CSV or JSON tables as PNG images for places that do not display tables."
 readme = "README.md"
 requires-python = ">=3.9"
