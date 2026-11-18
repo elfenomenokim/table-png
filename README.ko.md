@@ -1,3 +1,5 @@
+<div align="center">
+
 <img src="https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/logo.svg" width="96" height="96" alt="표가 이미지로 바뀌는 모습을 나타낸 아이콘">
 
 # table-png
@@ -10,6 +12,10 @@ Python 3.9+ · Pillow
 
 [![pypi](https://img.shields.io/pypi/v/table-png?label=pypi)](https://pypi.org/project/table-png/)
 [![license](https://img.shields.io/github/license/elfenomenokim/table-png)](https://github.com/elfenomenokim/table-png/blob/main/LICENSE)
+
+[설치](#설치) · [빠르게 써 보기](#빠르게-써-보기) · [필요한 이유](#필요한-이유)
+
+</div>
 
 ![일반 텍스트로 보이는 Markdown 표와 PNG로 렌더링한 결과](https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/demo/hero.png)
 

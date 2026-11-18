@@ -1,3 +1,5 @@
+<div align="center">
+
 <img src="https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/logo.svg" width="96" height="96" alt="table-png: a table turned into an image">
 
 # table-png
@@ -10,6 +12,10 @@ Python 3.9+ · Pillow
 
 [![pypi](https://img.shields.io/pypi/v/table-png?label=pypi)](https://pypi.org/project/table-png/)
 [![license](https://img.shields.io/github/license/elfenomenokim/table-png)](https://github.com/elfenomenokim/table-png/blob/main/LICENSE)
+
+[Install](#install) · [Quick start](#quick-start) · [Why](#why)
+
+</div>
 
 ![A plain-text Markdown table beside its rendered PNG](https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/demo/hero.png)
 
