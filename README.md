@@ -1,8 +1,15 @@
+<img src="https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/logo.svg" width="96" height="96" alt="table-png: a table turned into an image">
+
 # table-png
 
 [한국어](README.ko.md)
 
 A command-line tool that renders Markdown, CSV or JSON tables as PNG images for places that do not display tables.
+
+Python 3.9+ · Pillow
+
+[![pypi](https://img.shields.io/pypi/v/table-png?label=pypi)](https://pypi.org/project/table-png/)
+[![license](https://img.shields.io/github/license/elfenomenokim/table-png)](https://github.com/elfenomenokim/table-png/blob/main/LICENSE)
 
 ![A plain-text Markdown table beside its rendered PNG](https://raw.githubusercontent.com/elfenomenokim/table-png/main/docs/demo/hero.png)
 
@@ -69,8 +76,12 @@ Cells wrap to fit the image. Tables longer than `--rows-per-page` (40 by default
 
 Pillow and a suitable local font are required. This project has been exercised on macOS, Ubuntu 24.04 and Windows 11. On Windows, flag emoji render as country letters and family emoji sequences render as separate faces.
 
+## Contributing
+
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the check that matters: render an input and look at the image.
+
 ## License
 
-MIT.
+MIT. See [LICENSE](LICENSE).
 
 Tables with too many columns for the selected width are rejected; increase `--width` or reduce the columns.
