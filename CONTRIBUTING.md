@@ -29,8 +29,9 @@ numbers and any CJK text. Pillow is the only runtime dependency.
 - **A rejection instead of a clipped image.** If a layout cannot fit one glyph in a column, or a
   title wider than the canvas, fail with a message rather than returning a plausible PNG.
 - **A line under Unreleased** in [CHANGELOG.md](CHANGELOG.md) when a user will notice.
-- **The platforms you did not test** written in the pull request. macOS, Ubuntu 24.04 and Windows 11
-  have been exercised.
+- **The platforms you did not test** written in the pull request. The `tests` workflow runs the
+  install and render smoke check on Ubuntu, macOS and Windows with Python 3.9 and 3.13; visual glyph
+  inspection stays manual.
 
 ## Review
 
