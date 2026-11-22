@@ -2,6 +2,26 @@
 
 Instructions for an AI agent asked to put a table somewhere that cannot show a Markdown table.
 
+## Set up for a user
+
+Goal: `table-png` turns a Markdown, CSV or JSON table into a PNG (correct Korean, Chinese, Japanese and emoji) for places that cannot show a table. Nothing here needs the person.
+
+1. Check what is present.
+   - `uv --version` prints a version. If not: `curl -LsSf https://astral.sh/uv/install.sh | sh`, then `export PATH="$HOME/.local/bin:$PATH"` (or open a new shell).
+   - Fonts: macOS and Windows have CJK and emoji fonts. On Linux check `fc-list | grep -i -E "noto.*cjk|noto.*emoji"`; if empty: `sudo apt install fonts-noto-cjk fonts-noto-color-emoji` (tell the user before using sudo).
+2. Install: `uv tool install table-png`. It ends with `Installed 1 executable: table-png`; `table-png --version` prints `table-png 0.1.3` or newer. `uv tool update-shell` puts `~/.local/bin` on PATH for later shells. Pillow comes with it; uv fetches Python if needed. (`uvx table-png ...` runs it once without installing.)
+3. Prove it:
+   ```sh
+   d=$(mktemp -d); printf '| Service | State |\n|---|---|\n| API | ✅ ready |\n| 대기열 | ⚠️ delayed |\n' > $d/t.md
+   table-png $d/t.md --out $d/t.png --title "Service status"; file $d/t.png
+   ```
+   It prints the output path and `file` says `PNG image data, ... x ...`. Open the image once (`open $d/t.png` on macOS) and check the Korean text and emoji are drawn, not boxes. Delete `$d` afterwards.
+4. If it fails, in this order:
+   - `table-png: command not found`: `~/.local/bin` is not on PATH (step 2).
+   - `no CJK-capable font found` (exit 1): install a font (step 1) or pass `--font /real/path.ttf`; do not invent a path.
+   - Boxes instead of emoji: no emoji font; install it or pass `--emoji-font`.
+   - Wrong columns: force `--format markdown|csv|json`, since detection can guess wrong.
+
 ## Repository work
 
 - Python package: `src/table_png/`; CLI: `src/table_png/cli.py`; renderer: `src/table_png/render.py`.
@@ -16,16 +36,6 @@ Instructions for an AI agent asked to put a table somewhere that cannot show a M
 Use it when the destination renders Markdown as plain text or drops tables: a chat message, a phone notification, a bot reply, an image-only field, a slide, a PDF, a social post, an issue comment that strips tables.
 
 Do not use it when the destination already renders Markdown (GitHub, most wikis, most chat clients with Markdown on), or when the user asked for text. Do not use it to make a picture of something that is not a table.
-
-## Install
-
-```console
-$ pipx install table-png
-```
-
-If `pipx` is unavailable, `uvx table-png …` runs it without installing, and `pip install table-png` works inside an existing environment. Python 3.9+ and Pillow are required; `pipx`/`uv` fetch both.
-
-On a minimal Linux image with no CJK font, install one first: `apt install fonts-noto-cjk fonts-noto-color-emoji`.
 
 ## Use
 
